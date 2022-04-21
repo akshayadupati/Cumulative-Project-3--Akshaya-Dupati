@@ -1,0 +1,67 @@
+﻿@model IEnumerable<CumulativeProject1_AkshayaDupati.Models.Teacher>
+@{
+    ViewBag.Title = "List";
+}
+
+<style>
+    .site_header{
+        text-align: center;
+    }
+    .main {
+        border: 1px solid black;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: lightgrey;
+    }
+    .heading{
+        font-weight: bold;
+    }
+    .summary {
+        font-weight: bold;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    .filter{
+        margin-bottom: 10px;
+    }
+    input[type="text"] {
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    input[type="submit"] {
+        padding: 5px 20px;
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    .option label{
+        font-weight: normal;
+    }
+</style>
+
+<h2 class="site_header">Teacher's List</h2>
+
+<div class="main">
+    <div class="summary">There are @Model.Count() teachers in the system.</div>
+    <div>
+        <a href="/Teacher/New">Add a new teacher</a>
+    </div>
+    <div>
+            <form id="teacher_form" action="/Teacher/List" method="GET">
+                    <input type="text" name="SearchKey" placeholder="Type a name.." />
+                    <input type="submit" value="Search" />
+            </form>
+    </div>
+    <div class="result">
+        @{
+            foreach (CumulativeProject1_AkshayaDupati.Models.Teacher Teacher in Model)
+            {
+                <div>
+                    <a href="/Teacher/Show/@Teacher.TeacherId">@Teacher.TeacherFName @Teacher.TeacherLName</a>
+                </div>
+            }
+        }
+    </div>
+</div>

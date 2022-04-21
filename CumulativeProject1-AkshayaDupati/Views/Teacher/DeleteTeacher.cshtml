@@ -1,0 +1,50 @@
+﻿@model CumulativeProject1_AkshayaDupati.Models.Teacher
+
+@{
+    ViewBag.Title = "DeleteTeacher";
+}
+
+<style>
+    .site_header {
+        text-align: center;
+    }
+
+    .main {
+        border: 1px solid black;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: lightgrey;
+    }
+    input[type="submit"]{
+        color: white;
+        background-color: red;
+        margin-top: 10px;
+        padding: 5px 20px;
+        border-radius: 5px
+    }
+
+    .text_bold {
+        font-weight: bold;
+    }
+</style>
+
+<h2 class="site_header">Are you sure you want to delete this teacher?</h2>
+<div class="main">
+    <div>
+        <a href="/Teacher/List">Back to Teachers</a>
+    </div>
+    <div>
+        <span class="text_bold">Teacher Id:</span> @Model.TeacherId
+    </div>
+    <div>
+        <span class="text_bold">First Name:</span> @Model.TeacherFName
+    </div>
+    <div>
+        <span class="text_bold">Last Name:</span> @Model.TeacherLName
+    </div>
+
+    <form method="POST" action="/Teacher/Delete/@Model.TeacherId">
+        <input type="submit" value="Delete" />
+    </form>
+</div>

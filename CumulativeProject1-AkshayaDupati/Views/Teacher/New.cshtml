@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "New";
+}
+
+
+<style>
+    .site_header {
+        text-align: center;
+    }
+
+    .main {
+        border: 1px solid black;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: lightgrey;
+    }
+
+    input[type="submit"] {
+        color: white;
+        background-color: green;
+        margin-top: 10px;
+        padding: 5px 20px;
+        border-radius: 5px
+    }
+</style>
+
+
+<h2 class="site_header">New Teacher Interface!</h2>
+
+<div class="main">
+    <form method="POST" action="/Teacher/Create" onsubmit="formValidation">
+        <div>
+            <label>First Name: </label>
+            <input type="text" name="teacherfname"/>
+        </div>
+        <div>
+            <label>Last Name: </label>
+            <input type="text" name="teacherlname" />
+        </div>
+        <div>   
+            <label>Salary: </label>
+            <input type="number" name="teachersalary" />
+        </div>
+        <div>
+            <input type="submit" value="Add Teacher" />
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,56 @@
+﻿@model CumulativeProject1_AkshayaDupati.Models.Teacher
+@{
+    ViewBag.Title = "Show";
+}
+
+
+<style>
+    .site_header {
+        text-align: center;
+    }
+
+    .main {
+        border: 1px solid black;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: lightgrey;
+    }
+
+    .teacher_details{
+        margin-top: 10px
+    }
+
+    .text_bold{
+        font-weight: bold;
+    }
+</style>
+
+<h2 class="site_header">Show Teacher</h2>
+<div class="main">
+    <div>
+        <a href="/Teacher/List">Back to Teachers</a>
+    </div>
+    <div>
+        <a href="/Teacher/DeleteTeacher/@Model.TeacherId"> Delete this teacher</a>
+    </div>
+    <div>
+        <a href="/Teacher/Edit/@Model.TeacherId"> Edit the teacher information</a>
+    </div>
+    <div class="teacher_details">
+        <div>
+            <span class="text_bold">Teacher ID:</span> @Model.TeacherId
+        </div>
+        <div>
+            <span class="text_bold">First Name:</span> @Model.TeacherFName
+        </div>
+        <div>
+            <span class="text_bold">Last Name:</span> @Model.TeacherLName
+        </div>
+        <div>
+            <span class="text_bold">Salary:</span> @Model.TeacherSalary
+        </div>
+    </div>
+</div>
+
+
